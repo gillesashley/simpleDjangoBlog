@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Caching
+*.cache/
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Compiled Python files
+*.pyc
+
+# SQLite database file
+db.sqlite3
+
+# Log files
+*.log
+
+# Secret key
+*.key
+
+# Ignore Django media files
+media/
+
+# Ignore Django static files
+static/
+
+# Ignore coverage reports
+htmlcov/
+
+# Ignore system-specific files
+.vscode/
+.idea/
+*.pyproj
+*.pid
+*.pyc
+
+# Ignore local settings
+local_settings.py
+
+# Ignore database migrations
+/migrations/
+
+# Ignore development and environment-specific files
+*.env
+*.env.*
+.env.local
+.env.development
+.env.test
+.env.production
