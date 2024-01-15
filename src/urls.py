@@ -17,6 +17,7 @@ Including another URLconf
 from drf_spectacular.views import SpectacularRedocView, SpectacularAPIView, SpectacularSwaggerView
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +30,8 @@ urlpatterns = [
     path('api/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path("api/schema/redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc", ),
-    path("api/schema/swagger-ui/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui", )
+    path("api/schema/swagger-ui/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui", ),
 ]
+
+if settings.DEBUG:
+    urlpatterns += path('__debug__/', include('debug_toolbar.urls')),
