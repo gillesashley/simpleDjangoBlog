@@ -7,5 +7,5 @@ from .serializers import PostSerializer
 
 class PostViewSet(ModelViewSet):
     permission_classes = (IsAuthorOrReadOnly,)
-    queryset = Post.objects.all()
+    queryset = Post.objects.select_related('author').all()
     serializer_class = PostSerializer

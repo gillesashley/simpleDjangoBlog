@@ -22,6 +22,9 @@ class Post(CommonInfo):
             models.Index(fields=['-created_at']),
         ]
 
+    # Use prefetch_related to optimize the query
+    # https://docs.djangoproject.com/en/3.1/topics/db/queries/#prefetching-objects
+
     def __str__(self):
         return self.title
 

@@ -14,8 +14,8 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ['is_staff', 'is_superuser', 'is_active', 'groups']
     search_fields = ['first_name', 'last_name', 'username', 'email']
     ordering = ['first_name', 'last_name']
-    fieldsets = UserAdmin.fieldsets + ((None, {"fields": ('name',)}),)
-    add_fieldsets = UserAdmin.add_fieldsets + ((None, {"fields": ('name', 'email')}),)
+    fieldsets = UserAdmin.fieldsets + ((None, {"fields": ('name', 'age')}),)
+    add_fieldsets = UserAdmin.add_fieldsets + ((None, {"fields": ('name', 'email', 'age')}),)
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
